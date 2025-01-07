@@ -2,6 +2,7 @@ import React from "react";
 import Heading from "./Heading";
 import Entry from "./Entry";
 import emojiNotes from "./emojipedia";
+import str from "./substring";
 
 function emojiNote(emoji)
 {
@@ -25,6 +26,7 @@ function App()
         <div className="dictionary">
         {emojiNotes.map(emojiNote)}
         </div>
+        {str}
         </div>
     );
 }
