@@ -1,27 +1,32 @@
 import React from "react";
-import Card from "./Card";
-import names from "./conatcts";
-import Avater from "./avater";
+import Heading from "./Heading";
+import Entry from "./Entry";
+import emojiNotes from "./emojipedia";
 
-
-function createCard(contact)
+function emojiNote(emoji)
 {
-  return <Card 
-     name={contact.name}
-     img={contact.img}
-     tel={contact.tel}
-     email={contact.email}
-     
-  />
+  return (
+ 
+     <Entry 
+      key={emoji.id}
+      emogi={emoji.emoji}
+      name={emoji.name}
+      meaning={emoji.meaning}
+     />
+    
+  );
 }
 
-function App() {
-  return (
-    <div>
-    <h2>My contacts</h2>
-    {names.map(createCard)}
-    </div>
-  );
+function App()
+{
+    return (
+        <div>
+        <Heading />
+        <div className="dictionary">
+        {emojiNotes.map(emojiNote)}
+        </div>
+        </div>
+    );
 }
 
 export default App;
